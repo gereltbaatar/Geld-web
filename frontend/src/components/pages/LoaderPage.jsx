@@ -1,4 +1,4 @@
-import { GeldIconT, GeldLogoIconT } from "../svg";
+import { GeldIconL, GeldLogoIconL } from "../svg";
 
 const LoaderPage = () => {
   return (
@@ -7,8 +7,8 @@ const LoaderPage = () => {
         <div className="flex items-center justify-center h-full">
           <div className="flex flex-col gap-12">
             <div className="flex items-center gap-4 p-[10px]">
-              <GeldLogoIconT />
-              <GeldIconT />
+              <GeldLogoIconL />
+              <GeldIconL />
             </div>
             <div className="flex flex-col gap-4 items-center ">
               <div className="">
