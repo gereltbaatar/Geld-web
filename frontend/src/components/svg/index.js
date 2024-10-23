@@ -10,3 +10,5 @@ export * from "./EllipseBlueIcon";
 export * from "./ArrowCircleUpIcon";
 export * from "./ArrowCircleDownIcon";
 export * from "./HouseIcon";
+export * from "./ChevronLiftIcon";
+export * from "./ChevronRightIcon";
