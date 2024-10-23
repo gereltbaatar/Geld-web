@@ -12,6 +12,7 @@ module.exports = {
         slate: "#334155",
         neutral: "#A3A3A3",
         base100: "#F3F4F6",
+        base200: "#E5E7EB",
         base300: "#D1D5DB",
         lime: "#84CC16",
       },

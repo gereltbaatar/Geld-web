@@ -7,3 +7,7 @@ export * from "./Card1_3";
 export * from "./ChartBar";
 export * from "./ChartDoughnut";
 export * from "./RecordCom";
+export * from "./Search";
+export * from "./CategoryCom";
+export * from "./RecordsLeft";
+export * from "./RecordsRight";
