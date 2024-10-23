@@ -13,6 +13,7 @@ module.exports = {
         neutral: "#A3A3A3",
         base100: "#F3F4F6",
         base300: "#D1D5DB",
+        lime: "#84CC16",
       },
       fontFamily: {
         roboto: ["Roboto", "sans-serif"],

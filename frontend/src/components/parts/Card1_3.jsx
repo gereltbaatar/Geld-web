@@ -2,7 +2,7 @@ import { EllipseBlueIcon, ArrowCircleDownIcon } from "../svg";
 
 export const Card1_3 = () => {
   return (
-    <div className=" bg-white rounded-[18px] w-96">
+    <div className=" bg-white rounded-[18px]">
       <div className="px-6 py-4">
         <div className="flex items-center gap-2">
           <EllipseBlueIcon />

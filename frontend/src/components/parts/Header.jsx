@@ -1,5 +1,5 @@
 import { Avatar } from ".";
-import { GeldIcon, GeldLogoIcon, PlusIcon } from "../svg";
+import { GeldLogoIcon, PlusIcon } from "../svg";
 
 export const Header = () => {
   return (

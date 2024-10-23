@@ -8,3 +8,4 @@ export * from "./EllipseGreenIcon";
 export * from "./EllipseBlueIcon";
 export * from "./ArrowCircleUpIcon";
 export * from "./ArrowCircleDownIcon";
+export * from "./HouseIcon";
