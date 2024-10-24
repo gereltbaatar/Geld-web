@@ -1,10 +1,11 @@
+import { RecordComRP } from ".";
 import { ChevronLiftIcon, ChevronRightIcon } from "../svg";
 
 export const RecordsRight = () => {
   return (
     <div className="w-full">
-      <div className="">
-        <div className="flex justify-between border">
+      <div className="flex flex-col gap-4">
+        <div className="flex justify-between">
           <div className="flex items-center gap-4">
             <div className="flex items-center justify-center rounded-lg w-8 h-8 bg-base200">
               <ChevronLiftIcon />
@@ -17,11 +18,15 @@ export const RecordsRight = () => {
             </div>
           </div>
           <div className="">
-            <div className="menu">
-              <li>
-                <details>
-                  <summary>Parent</summary>
-                  <ul className="p-2">
+            <div className="bg-[#F9FAFB] border border-base300 rounded-lg">
+              <li className="list-none ">
+                <details className="menu dropdown p-0">
+                  <summary className="flex justify-between items-center cursor-pointer px-4 py-3">
+                    <span className="font-roboto font-bold not-italic text-base w-32">
+                      Newest fisrt
+                    </span>
+                  </summary>
+                  <ul className="dropdown-content bg-[#F9FAFB] border border-base300 rounded-lg p-4">
                     <li>
                       <a>Submenu 1</a>
                     </li>
@@ -34,7 +39,35 @@ export const RecordsRight = () => {
             </div>
           </div>
         </div>
-        <div className="border">m</div>
+        <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-3">
+            <p className="font-roboto font-bold not-italic text-base w-32">
+              Today
+            </p>
+            <div className="flex flex-col gap-3">
+              <RecordComRP />
+              <RecordComRP />
+              <RecordComRP />
+              <RecordComRP />
+            </div>
+          </div>
+          <div className="">
+            {" "}
+            <div className="flex flex-col gap-3">
+              <p className="font-roboto font-bold not-italic text-base w-32">
+                Yesterday
+              </p>
+              <div className="flex flex-col gap-3">
+                <RecordComRP />
+                <RecordComRP />
+                <RecordComRP />
+                <RecordComRP />
+                <RecordComRP />
+                <RecordComRP />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
