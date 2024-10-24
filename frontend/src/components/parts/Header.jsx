@@ -1,7 +1,14 @@
+"use client";
+
+import Link from "next/link";
 import { Avatar } from ".";
 import { GeldLogoIcon, PlusIcon } from "../svg";
+import { usePathname } from "next/navigation";
 
 export const Header = () => {
+  const path = usePathname();
+  console.log("dasborder", path);
+
   return (
     <main>
       <div className="">
@@ -12,12 +19,25 @@ export const Header = () => {
                 <div className="p-[6px]">
                   <GeldLogoIcon />
                 </div>
-                <button className="font-roboto font-normal focus:font-bold not-italic text-[#0F172A] text-base">
-                  Dashboard
-                </button>
-                <button className="font-roboto font-normal focus:font-bold not-italic text-[#0F172A] text-base">
-                  Records
-                </button>
+                <Link href={"/dashboard"}>
+                  <button
+                    className={`font-roboto ${
+                      path ? "font-bold" : "font-normal"
+                    } focus:font-bold not-italic text-[#0F172A] text-base`}
+                  >
+                    Dashboard
+                  </button>
+                </Link>
+
+                <Link href={"/records"}>
+                  <button
+                    className={`font-roboto ${
+                      !path ? "font-bold" : "font-normal"
+                    } focus:font-bold not-italic text-[#0F172A] text-base`}
+                  >
+                    Records
+                  </button>
+                </Link>
               </div>
               <div className="flex gap-6">
                 <div className="flex items-center">

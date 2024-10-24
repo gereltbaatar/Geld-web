@@ -1,5 +1,6 @@
 "use client";
 
+
 import {
   Card1_2,
   Card1_3,
@@ -10,6 +11,8 @@ import {
 } from "../parts";
 
 const HomePage = () => {
+
+
   return (
     <main className="h-full bg-base100">
       <div className="flex flex-col gap-8">
