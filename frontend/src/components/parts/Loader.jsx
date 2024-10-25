@@ -1,6 +1,6 @@
 import { GeldIconL, GeldLogoIconL } from "../svg";
 
-const LoaderPage = () => {
+export const Loader = () => {
   return (
     <main>
       <div className="w-screen h-screen">
@@ -24,5 +24,3 @@ const LoaderPage = () => {
     </main>
   );
 };
-
-export default LoaderPage;

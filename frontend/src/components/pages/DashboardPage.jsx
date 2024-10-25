@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import {
   Card1_2,
@@ -9,6 +9,7 @@ import {
   ChartBar,
   ChartDoughnut,
   Header,
+  Loader,
   RecordCom,
 } from "../parts";
 
@@ -16,20 +17,24 @@ const HomePage = () => {
   ///////////////////////////////////////////////////////////////////////////////
 
   const router = useRouter();
+  const [loading, setLoading] = useState(true);
 
   ///////////////////////////////////////////////////////////////////////////////
 
   useEffect(() => {
-    // Check if user is logged in
     const isLoggedIn = localStorage.getItem("isLoggedIn");
+    setLoading(false);
     if (!isLoggedIn) {
-      // Redirect to login if not logged in
       toast.warning("Login please!");
       router.push("/login");
     }
   }, [router]);
 
   ///////////////////////////////////////////////////////////////////////////////
+
+  if (loading === true) {
+    return <Loader />;
+  }
 
   return (
     <main className="h-full bg-base100">

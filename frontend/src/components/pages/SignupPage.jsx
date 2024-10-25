@@ -122,7 +122,7 @@ const SignupPage = () => {
                     />
                     <InputL
                       type={"text"}
-                      placeholder={"Re-assword"}
+                      placeholder={"Re-password"}
                       name={""}
                     />
                     <ButtonL type={"submit"} text={"Sign up"} />

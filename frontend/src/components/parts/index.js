@@ -12,3 +12,4 @@ export * from "./RecordsLeft";
 export * from "./RecordsRight";
 export * from "./RecordCom";
 export * from "./RecordComRP";
+export * from "./Loader";

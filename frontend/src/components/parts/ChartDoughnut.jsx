@@ -20,8 +20,20 @@ export const ChartDoughnut = () => {
       },
     ],
   };
+
+  const options = {
+    plugins: {
+      legend: {
+        display: false, // This hides the legend
+      },
+      tooltip: {
+        // You can configure tooltips here if needed
+      },
+    },
+  };
+
   return (
-    <div className=" bg-white rounded-[18px]">
+    <div className="bg-white rounded-[18px]">
       <div className="flex justify-between px-6 py-4">
         <p className="font-roboto font-bold not-italic text-base text-[#0F172A]">
           Income - Expense
@@ -33,7 +45,7 @@ export const ChartDoughnut = () => {
       <div className="w-full border-[0.5px]"></div>
       <div className="px-6 py-8">
         <div className="w-40 h-40">
-          <Doughnut data={data} />
+          <Doughnut data={data} options={options} />
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ButtonL, InputL } from "../parts";
+import { ButtonL, InputL, Loader } from "../parts";
 import { GeldIcon, GeldLogoIcon } from "../svg";
 import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
@@ -14,6 +14,7 @@ const LoginPage = () => {
 
   const BACKEND_ENDPOINT = process.env.BACKEND_URL;
   const [errorMessage, setErrorMessage] = useState("");
+  const [loading, setLoading] = useState(true);
   const router = useRouter();
 
   ///////////////////////////////////////////////////////////////////////////////
@@ -42,9 +43,9 @@ const LoginPage = () => {
       };
 
       try {
+        setLoading(true);
         const response = await fetch(`${BACKEND_ENDPOINT}/login`, option);
         const data = await response.json();
-
         if (response.ok) {
           toast.success("Login successful!");
           localStorage.setItem("isLoggedIn", "true");
@@ -52,6 +53,7 @@ const LoginPage = () => {
         } else {
           setErrorMessage(data.message || "Error occurred");
         }
+        setLoading(false);
       } catch (error) {
         setErrorMessage("Network error");
       }
@@ -61,6 +63,7 @@ const LoginPage = () => {
   ///////////////////////////////////////////////////////////////////////////////
 
   useEffect(() => {
+    setLoading(false);
     const isLoggedIn = localStorage.getItem("isLoggedIn");
     if (isLoggedIn) {
       toast.success("you already login");
@@ -69,6 +72,10 @@ const LoginPage = () => {
   }, [router]);
 
   ///////////////////////////////////////////////////////////////////////////////
+
+  if (loading === true) {
+    return <Loader />;
+  }
 
   return (
     <main className="h-full">
@@ -106,7 +113,7 @@ const LoginPage = () => {
                       htmlFor={"password"}
                       id={"password"}
                       name={"password"}
-                      type={"text"}
+                      type={"password"}
                       placeholder={"Password"}
                       value={formik.values.password}
                       onChange={formik.handleChange}
