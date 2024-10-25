@@ -1,6 +1,8 @@
 "use client";
 
-
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
+import { toast } from "react-toastify";
 import {
   Card1_2,
   Card1_3,
@@ -11,7 +13,23 @@ import {
 } from "../parts";
 
 const HomePage = () => {
+  ///////////////////////////////////////////////////////////////////////////////
 
+  const router = useRouter();
+
+  ///////////////////////////////////////////////////////////////////////////////
+
+  useEffect(() => {
+    // Check if user is logged in
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+    if (!isLoggedIn) {
+      // Redirect to login if not logged in
+      toast.warning("Login please!");
+      router.push("/login");
+    }
+  }, [router]);
+
+  ///////////////////////////////////////////////////////////////////////////////
 
   return (
     <main className="h-full bg-base100">
