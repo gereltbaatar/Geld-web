@@ -1,6 +1,6 @@
 "use client";
 
-import { InputL } from "../parts";
+import { CategoryAdd, InputL } from "../parts";
 import { PlusIconBlue } from "../svg";
 
 export const AddCategoryButton = () => {
@@ -16,7 +16,7 @@ export const AddCategoryButton = () => {
         </p>
       </button>
       <dialog id="my_modal_3" className="modal">
-        <div className="modal-box p-0">
+        <div className="modal-box p-0 rounded-lg">
           <div className="flex justify-between py-5 px-6 border border-x-0 border-t-0">
             <h3 className="font-roboto font-bold not-italic text-xl text-[#0F172A]">
               Add Category
@@ -25,10 +25,19 @@ export const AddCategoryButton = () => {
               <button className="btn btn-sm btn-circle btn-ghost">✕</button>
             </form>
           </div>
-          <div className="p-6">
-            <div className=""></div>
-            <div className="">
-              <InputL placeholder={"Name"} />
+          <div className="p-6 flex flex-col gap-8">
+            <div className="flex gap-3">
+              <CategoryAdd />
+              <div className="w-full">
+                <InputL placeholder={"Name"} />
+              </div>
+            </div>
+            <div className="w-full">
+              <button className="px-3 py-2 w-full bg-[#16A34A] rounded-[20px]">
+                <p className="font-roboto font-normal not-italic text-white">
+                  Add
+                </p>
+              </button>
             </div>
           </div>
         </div>

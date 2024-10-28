@@ -13,3 +13,4 @@ export * from "./RecordsRight";
 export * from "./RecordCom";
 export * from "./RecordComRP";
 export * from "./Loader";
+export * from "./CategoryAdd";

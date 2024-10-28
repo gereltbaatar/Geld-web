@@ -15,6 +15,13 @@ module.exports = {
         base200: "#E5E7EB",
         base300: "#D1D5DB",
         lime: "#84CC16",
+        ellipse130: "#0166FF",
+        ellipse131: "#01B3FF",
+        ellipse132: "#41CC00",
+        ellipse133: "#F9D100",
+        ellipse134: "#FF7B01",
+        ellipse135: "#AE01FF",
+        ellipse136: "#FF0101",
       },
       fontFamily: {
         roboto: ["Roboto", "sans-serif"],

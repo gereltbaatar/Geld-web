@@ -12,3 +12,4 @@ export * from "./ArrowCircleDownIcon";
 export * from "./HouseIcon";
 export * from "./ChevronLiftIcon";
 export * from "./ChevronRightIcon";
+export * from "./ArrowDropDown";
