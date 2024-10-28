@@ -134,7 +134,7 @@ const LoginPage = () => {
               </div>
             </div>
           </div>
-          <div className="h-full bg-blue">dwedwed</div>
+          <div className="h-full bg-blue"></div>
         </div>
       </div>
     </main>
