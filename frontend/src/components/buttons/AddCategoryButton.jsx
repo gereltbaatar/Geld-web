@@ -5,13 +5,6 @@ import { PlusIconBlue } from "../svg";
 
 export const AddCategoryButton = () => {
   return (
-    // <button className="flex w-full items-center justify-start gap-2 px-3 py-1 rounded-[20px]">
-    //   <PlusIconBlue />
-    //   <p className="font-roboto font-normal not-italic text-base text-[#1F2937]">
-    //     Add Category
-    //   </p>
-    // </button>
-
     <div className="">
       <button
         className="flex w-full items-center justify-start gap-2 px-3 py-1 rounded-[20px]"
