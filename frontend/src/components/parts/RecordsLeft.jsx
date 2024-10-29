@@ -1,6 +1,6 @@
-import { AddCategoryButton } from "../buttons";
+import { AddCategoryButton, AddRecords } from "../buttons";
 import { CategoryCom, Search } from "../parts";
-import { PlusIcon } from "../svg";
+
 
 export const RecordsLeft = () => {
   return (
@@ -8,12 +8,7 @@ export const RecordsLeft = () => {
       <div className="flex flex-col items-start gap-6">
         <div className="font-roboto font-bold not-italic text-2xl">Records</div>
         <div className="w-full">
-          <button className="flex w-full items-center justify-center bg-blue gap-1 px-3 py-1 rounded-[20px]">
-            <PlusIcon />
-            <p className="font-roboto font-normal not-italic text-base text-white">
-              Add
-            </p>
-          </button>
+          <AddRecords />
         </div>
         <Search />
         <div className="flex flex-col gap-4">

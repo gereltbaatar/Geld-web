@@ -43,7 +43,7 @@ const HomePage = () => {
         <div className="container m-auto">
           <div className="px-[120px] flex flex-col gap-6">
             <div className="grid grid-cols-3 gap-6 justify-between">
-              <div className="bg-blue w-full h-[216px] rounded-[18px]"></div>
+              <div className="bg-blue w-full h-full rounded-[18px] "></div>
               <Card1_2 />
               <Card1_3 />
             </div>

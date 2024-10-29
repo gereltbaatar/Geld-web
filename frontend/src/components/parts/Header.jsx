@@ -7,34 +7,25 @@ import { usePathname } from "next/navigation";
 
 export const Header = () => {
   const path = usePathname();
-  console.log("dasborder", path);
 
   return (
     <main>
       <div className="">
         <div className="bg-white">
           <div className="container m-auto">
-            <div className="px-[120px] py-4 flex justify-between">
+            <div className="px-[120px]  py-4 flex justify-between">
               <div className="flex items-center gap-6">
                 <div className="p-[6px]">
                   <GeldLogoIcon />
                 </div>
                 <Link href={"/dashboard"}>
-                  <button
-                    className={`font-roboto ${
-                      path ? "font-bold" : "font-normal"
-                    } focus:font-bold not-italic text-[#0F172A] text-base`}
-                  >
+                  <button className="font-roboto  {`fontWidth`} focus:font-bold not-italic text-[#0F172A] text-base">
                     Dashboard
                   </button>
                 </Link>
 
                 <Link href={"/records"}>
-                  <button
-                    className={`font-roboto ${
-                      !path ? "font-bold" : "font-normal"
-                    } focus:font-bold not-italic text-[#0F172A] text-base`}
-                  >
+                  <button className="font-roboto {fontWidth1} focus:font-bold not-italic text-[#0F172A] text-base">
                     Records
                   </button>
                 </Link>

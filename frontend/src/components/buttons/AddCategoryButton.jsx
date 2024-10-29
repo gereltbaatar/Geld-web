@@ -1,7 +1,7 @@
 "use client";
 
 import { CategoryAdd, InputL } from "../parts";
-import { PlusIconBlue } from "../svg";
+import { Close, PlusIconBlue } from "../svg";
 
 export const AddCategoryButton = () => {
   return (
@@ -22,7 +22,9 @@ export const AddCategoryButton = () => {
               Add Category
             </h3>
             <form method="dialog">
-              <button className="btn btn-sm btn-circle btn-ghost">✕</button>
+              <button className="btn btn-sm btn-circle btn-ghost">
+                <Close />
+              </button>
             </form>
           </div>
           <div className="p-6 flex flex-col gap-8">
