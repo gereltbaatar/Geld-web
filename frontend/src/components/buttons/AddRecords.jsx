@@ -2,8 +2,15 @@
 
 import { InputL } from "../parts";
 import { Close, PlusIcon } from "../svg";
+import React, { useState } from "react";
 
 export const AddRecords = () => {
+  const [transactionType, setTransactionType] = useState("EXP");
+
+  const toggleTransactionType = (type) => {
+    setTransactionType(type);
+  };
+
   return (
     <div className="">
       <button
@@ -29,17 +36,53 @@ export const AddRecords = () => {
           </div>
           <div className="grid grid-cols-2">
             <div className="px-6 py-5 w-full">
-              <div className="">1</div>
+              <div className="">
+                <div className="bg-base100 h-10 rounded-[100px] grid grid-cols-2">
+                  <button
+                    className={`flex-1 py-2 font-semibold rounded-[100px] transition ${
+                      transactionType === "EXP"
+                        ? "bg-[#0166FF] text-white"
+                        : "bg-base100 text-gray-700"
+                    }`}
+                    type="button"
+                    onClick={() => toggleTransactionType("EXP")}
+                  >
+                    Expense
+                  </button>
+                  <button
+                    className={`flex-1 py-2 font-semibold rounded-[100px] transition ${
+                      transactionType === "INC"
+                        ? "bg-[#16A34A] text-white"
+                        : "bg-base100 text-gray-700"
+                    }`}
+                    type="button"
+                    onClick={() => toggleTransactionType("INC")}
+                  >
+                    Income
+                  </button>
+                </div>
+                <div className="">
+                  
+                </div>
+                <button
+                  type="submit"
+                  className={`w-full py-2 text-white font-semibold rounded-[100px] ${
+                    transactionType === "EXP" ? "bg-[#0166FF]" : "bg-[#16A34A]"
+                  } transition duration-200`}
+                >
+                  Add Record
+                </button>
+              </div>
             </div>
-            <div className="p-6 border flex flex-col gap-12">
-              <InputL />
+            <div className="p-6 pt-11 flex flex-col gap-12">
+              <InputL placeholder={"Write here"} />
               <div className="">
                 <textarea
-                  name=""
-                  className="textarea bg-base100"
+                  placeholder="Write here"
+                  className="w-full p-4 resize-none outline-none  border border-base300 bg-base100 rounded-lg font-roboto font-normal not-italic text-[#94A3B8]"
                   cols="30"
                   rows="10"
-                  id=""
+                  required
                 ></textarea>
               </div>
             </div>
