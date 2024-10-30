@@ -1,6 +1,5 @@
 import { AddCategoryButton, AddRecords } from "../buttons";
-import { CategoryCom, Search } from "../parts";
-
+import { CategoryFilter, Search } from "../parts";
 
 export const RecordsLeft = () => {
   return (
@@ -50,17 +49,17 @@ export const RecordsLeft = () => {
             </button>
           </div>
           <div className="flex flex-col gap-2">
-            <CategoryCom text={"Food & Drinks"} />
-            <CategoryCom text={"Shopping"} />
-            <CategoryCom text={"Housing"} />
-            <CategoryCom text={"Transportation"} />
-            <CategoryCom text={"Vehicle"} />
-            <CategoryCom text={"Life & Entertainment"} />
-            <CategoryCom text={"Communication, PC"} />
-            <CategoryCom text={"Financial expenses"} />
-            <CategoryCom text={"Investments"} />
-            <CategoryCom text={"Income"} />
-            <CategoryCom text={"Others"} />
+            <CategoryFilter text={"Food & Drinks"} />
+            <CategoryFilter text={"Shopping"} />
+            <CategoryFilter text={"Housing"} />
+            <CategoryFilter text={"Transportation"} />
+            <CategoryFilter text={"Vehicle"} />
+            <CategoryFilter text={"Life & Entertainment"} />
+            <CategoryFilter text={"Communication, PC"} />
+            <CategoryFilter text={"Financial expenses"} />
+            <CategoryFilter text={"Investments"} />
+            <CategoryFilter text={"Income"} />
+            <CategoryFilter text={"Others"} />
           </div>
           <AddCategoryButton />
         </div>

@@ -29,3 +29,4 @@ export * from "./OrangeSlice";
 export * from "./Peace";
 export * from "./ToiletPaper";
 export * from "./Pencil";
+export * from "./ForkKnife";
