@@ -1,10 +1,10 @@
 import { RecordComRP } from ".";
 import { ChevronLiftIcon, ChevronRightIcon } from "../svg";
 
-export const RecordsRight = () => {
+export const RecordsRight = ({ recordData }) => {
   return (
     <div className="w-full">
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 ">
         <div className="flex justify-between">
           <div className="flex items-center gap-4">
             <div className="flex items-center justify-center rounded-lg w-8 h-8 bg-base200">
@@ -39,32 +39,45 @@ export const RecordsRight = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-6 max-h-[850px] h-full overflow-y-scroll scrollbar-hide">
           <div className="flex flex-col gap-3">
             <p className="font-roboto font-bold not-italic text-base w-32">
               Today
+            </p>
+            <div className="flex flex-col gap-3">
+              {recordData.map((items, itemsIndex) => {
+                return (
+                  <div key={itemsIndex} className="">
+                    <RecordComRP items={items} />
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-3">
+            <p className="font-roboto font-bold not-italic text-base w-32">
+              Yesterday
             </p>
             <div className="flex flex-col gap-3">
               <RecordComRP />
               <RecordComRP />
               <RecordComRP />
               <RecordComRP />
-            </div>
-          </div>
-          <div className="">
-            {" "}
-            <div className="flex flex-col gap-3">
-              <p className="font-roboto font-bold not-italic text-base w-32">
-                Yesterday
-              </p>
-              <div className="flex flex-col gap-3">
-                <RecordComRP />
-                <RecordComRP />
-                <RecordComRP />
-                <RecordComRP />
-                <RecordComRP />
-                <RecordComRP />
-              </div>
+              <RecordComRP />
+              <RecordComRP />
+              <RecordComRP />
+              <RecordComRP />
+              <RecordComRP />
+              <RecordComRP />
+              <RecordComRP />
+              <RecordComRP />
+              <RecordComRP />
+              <RecordComRP />
+              <RecordComRP />
+              <RecordComRP />
+              <RecordComRP />
+              <RecordComRP />
             </div>
           </div>
         </div>

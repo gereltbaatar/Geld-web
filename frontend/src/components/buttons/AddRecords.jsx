@@ -28,7 +28,6 @@ export const AddRecords = () => {
         ...values,
         transaction_type: transactionType,
       };
-      console.log(requestData, "requestData");
 
       const option = {
         method: "POST",

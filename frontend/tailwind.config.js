@@ -26,9 +26,15 @@ module.exports = {
       fontFamily: {
         roboto: ["Roboto", "sans-serif"],
       },
+      scrollbar: {
+        hide: true,
+      },
     },
   },
-  plugins: [require("daisyui")],
+  variants: {
+    scrollbar: ["rounded"], // Tailwind CSS v2.1+ дээр
+  },
+  plugins: [require("daisyui"), require("tailwind-scrollbar-hide")],
   daisyui: {
     darkTheme: "light", // name of one of the included themes for dark mode
   },

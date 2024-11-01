@@ -24,6 +24,20 @@ server.get("/", async (_, response) => {
 
 ///////////////////////////////////////////////////////////////////////////////
 
+server.get("/records", async (_, response) => {
+  try {
+    const recordsData = await sql`SELECT * FROM record`;
+    response.status(200).json({ success: true, recordsData: recordsData });
+  } catch (error) {
+    response.status(500).json({
+      message: "Not found data",
+      error: error,
+    });
+  }
+});
+
+///////////////////////////////////////////////////////////////////////////////
+
 server.post("/signup", async (request, response) => {
   const { name, email, password } = request.body;
 
@@ -72,6 +86,31 @@ server.post("/login", async (request, response) => {
     response
       .status(500)
       .json({ message: "Internal server error during login user" });
+  }
+});
+
+///////////////////////////////////////////////////////////////////////////////
+
+server.post("/records", async (request, response) => {
+  const { name, amount, transaction_type, description, userId, category_id } =
+    request.body;
+  console.log(transaction_type);
+
+  try {
+    const newRecord =
+      await sql`INSERT INTO record(name, amount, transaction_type, description) 
+        VALUES ( ${name}, ${amount}, ${transaction_type}, ${description})`;
+
+    response.status(201).json({
+      message: "Login successful",
+      success: true,
+      newRecord: newRecord,
+    });
+  } catch (error) {
+    response.status(500).json({
+      message: "Internal server error during login user",
+      error: error,
+    });
   }
 });
 
