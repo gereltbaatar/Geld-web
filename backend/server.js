@@ -38,6 +38,20 @@ server.get("/records", async (_, response) => {
 
 ///////////////////////////////////////////////////////////////////////////////
 
+server.get("/category", async (request, response) => {
+  try {
+    const categoryData = await sql`SELECT * FROM category`;
+    response.status(200).json({ success: true, categoryData });
+  } catch (error) {
+    response.status(500).json({
+      message: "Not found data",
+      error: error,
+    });
+  }
+});
+
+///////////////////////////////////////////////////////////////////////////////
+
 server.post("/signup", async (request, response) => {
   const { name, email, password } = request.body;
 
@@ -102,18 +116,36 @@ server.post("/records", async (request, response) => {
         VALUES ( ${name}, ${amount}, ${transaction_type}, ${description})`;
 
     response.status(201).json({
-      message: "Login successful",
+      message: "amjilttai record nemegdlee",
       success: true,
-      newRecord: newRecord,
+      newRecord,
     });
   } catch (error) {
     response.status(500).json({
-      message: "Internal server error during login user",
+      message: "record nemhed aldaa garlaa",
       error: error,
     });
   }
 });
 
+///////////////////////////////////////////////////////////////////////////////
+
+server.post("/category", async (request, response) => {
+  const { name, category_icon, icon_color } = request.body;
+  try {
+    const newCategory =
+      await sql`INSERT INTO category(name, category_icon, icon_color) VALUES (${name}, ${category_icon}, ${icon_color})`;
+    response.status(201).json({
+      message: "amjilttai category nemegdlee",
+      newCategory,
+    });
+  } catch (error) {
+    response.status(500).json({
+      message: "aldaagarlaa",
+      error: error,
+    });
+  }
+});
 ///////////////////////////////////////////////////////////////////////////////
 
 server.listen(PORT, () => {
