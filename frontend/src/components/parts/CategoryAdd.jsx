@@ -36,8 +36,8 @@ export const CategoryAdd = () => {
   return (
     <div className="">
       <button
-        className="px-4 py-[11px] rounded-lg border border-base300 bg-[#F9FAFB]"
         onClick={() => document.getElementById("my_modal_2").showModal()}
+        className="flex px-4 py-[11px] rounded-lg border border-base300 bg-[#F9FAFB]"
       >
         <div className="flex gap-1">
           <HouseOneIcon />

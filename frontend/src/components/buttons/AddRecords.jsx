@@ -124,7 +124,7 @@ export const AddRecords = () => {
                         <p className="not-italic text-base font-normal font-roboto">
                           Category
                         </p>
-                        {/* <AddCategory /> */}
+                        <AddCategory />
                       </div>
                       <div className="grid grid-cols-2 gap-3">
                         <div className="flex flex-col gap-1">

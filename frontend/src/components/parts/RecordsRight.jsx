@@ -59,26 +59,7 @@ export const RecordsRight = ({ recordData }) => {
             <p className="font-roboto font-bold not-italic text-base w-32">
               Yesterday
             </p>
-            <div className="flex flex-col gap-3">
-              <RecordComRP />
-              <RecordComRP />
-              <RecordComRP />
-              <RecordComRP />
-              <RecordComRP />
-              <RecordComRP />
-              <RecordComRP />
-              <RecordComRP />
-              <RecordComRP />
-              <RecordComRP />
-              <RecordComRP />
-              <RecordComRP />
-              <RecordComRP />
-              <RecordComRP />
-              <RecordComRP />
-              <RecordComRP />
-              <RecordComRP />
-              <RecordComRP />
-            </div>
+            <div className="flex flex-col gap-3"></div>
           </div>
         </div>
       </div>

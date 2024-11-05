@@ -5,7 +5,7 @@ import { Close, PlusIconBlue } from "../svg";
 
 export const CategoryAddPlus = () => {
   return (
-    <div className="">
+    <div className="relative">
       <button
         className="flex w-full items-center justify-start gap-2 p-2 rounded-[20px]"
         onClick={() => document.getElementById("my_modal_25").showModal()}
