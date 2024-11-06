@@ -30,23 +30,40 @@ import {
   ToiletPaper,
   Pencil,
 } from "../categorySvg";
+import { useState } from "react";
 import { ArrowDropDown } from "../svg";
+import * as React from "react";
+import Box from "@mui/material/Box";
+import Modal from "@mui/material/Modal";
+import Button from "@mui/material/Button";
 
 export const CategoryAdd = () => {
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => {
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   return (
-    <div className="">
-      <button
-        onClick={() => document.getElementById("my_modal_2").showModal()}
-        className="flex px-4 py-[11px] rounded-lg border border-base300 bg-[#F9FAFB]"
-      >
-        <div className="flex gap-1">
-          <HouseOneIcon />
-          <ArrowDropDown />
+    <React.Fragment>
+      <Button onClick={handleOpen} className="hover:bg-[#F9FAFB]">
+        <div className="flex px-4 py-[11px] rounded-lg border border-base300 bg-base100">
+          <div className="flex gap-1 ">
+            <HouseOneIcon />
+            <ArrowDropDown />
+          </div>
         </div>
-      </button>
-      <dialog id="my_modal_2" className="modal">
-        <div className="modal-box p-6 max-w-[312px] rounded-lg">
-          <div className="flex flex-col gap-6 ">
+      </Button>
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="child-modal-title"
+        aria-describedby="child-modal-description"
+      >
+        <Box className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white shadow-md rounded-lg p-6">
+          <div className="flex flex-col gap-6">
             <div className="grid grid-cols-6 gap-6">
               <HouseOneIcon />
               <HouseTwoIcon />
@@ -89,12 +106,10 @@ export const CategoryAdd = () => {
               <div className="bg-ellipse135 w-6 h-6 rounded-[50%]"></div>
               <div className="bg-ellipse136 w-6 h-6 rounded-[50%]"></div>
             </div>
+            {/* <Button onClick={handleClose}></Button> */}
           </div>
-        </div>
-        <form method="dialog" className="modal-backdrop">
-          <button>close</button>
-        </form>
-      </dialog>
-    </div>
+        </Box>
+      </Modal>
+    </React.Fragment>
   );
 };
