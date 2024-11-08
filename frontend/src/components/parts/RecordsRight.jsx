@@ -1,7 +1,7 @@
 import { RecordComRP } from ".";
 import { ChevronLiftIcon, ChevronRightIcon } from "../svg";
 
-export const RecordsRight = ({ recordData }) => {
+export const RecordsRight = ({ recordData, categoryData }) => {
   return (
     <div className="w-full">
       <div className="flex flex-col gap-4 ">

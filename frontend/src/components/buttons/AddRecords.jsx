@@ -5,7 +5,7 @@ import { AddCategory, InputL } from "../parts";
 import { Close, PlusIcon } from "../svg";
 import { useState } from "react";
 
-export const AddRecords = () => {
+export const AddRecords = ({ categoryData }) => {
   const [transactionType, setTransactionType] = useState("EXP");
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -40,13 +40,10 @@ export const AddRecords = () => {
 
       try {
         const response = await fetch(`${BACKEND_ENDPOINT}/records`, option);
-        const data = await response.json();
-
-        if (response.ok) {
-          router.push("/");
-        } else {
-          setErrorMessage(data.message || "Error occurred");
+        if (!response.ok) {
+          throw new Error("Failed to create record");
         }
+        const data = await response.json();
       } catch (error) {
         setErrorMessage("Network error");
       }
@@ -124,7 +121,7 @@ export const AddRecords = () => {
                         <p className="not-italic text-base font-normal font-roboto">
                           Category
                         </p>
-                        <AddCategory />
+                        <AddCategory categoryData={categoryData} />
                       </div>
                       <div className="grid grid-cols-2 gap-3">
                         <div className="flex flex-col gap-1">
@@ -190,7 +187,7 @@ export const AddRecords = () => {
                       cols="30"
                       rows="10"
                       value={formik.values.description}
-                      onChange={formik.handleChange} // onChange функц
+                      onChange={formik.handleChange}
                     ></textarea>
                   </div>
                 </div>

@@ -1,13 +1,15 @@
-import { AddCategoryButton, AddRecords } from "../buttons";
-import { CategoryFilter, Search } from "../parts";
+"use client";
 
-export const RecordsLeft = () => {
+import { AddCategoryButton, AddRecords } from "../buttons";
+import { CategoryAddPlus, CategoryFilter, Search } from "../parts";
+
+export const RecordsLeft = ({ categoryData }) => {
   return (
     <div className="max-w-[260px] w-full max-h-[820px] h-full py-6 px-4 border border-base200 bg-[#F9FAFB] rounded-xl ">
       <div className="flex flex-col items-start gap-6">
         <div className="font-roboto font-bold not-italic text-2xl">Records</div>
         <div className="w-full">
-          <AddRecords />
+          <AddRecords categoryData={categoryData} />
         </div>
         <Search />
         <div className="flex flex-col gap-4">
@@ -49,19 +51,14 @@ export const RecordsLeft = () => {
             </button>
           </div>
           <div className="flex flex-col gap-2">
-            <CategoryFilter text={"Food & Drinks"} />
-            <CategoryFilter text={"Shopping"} />
-            <CategoryFilter text={"Housing"} />
-            <CategoryFilter text={"Transportation"} />
-            <CategoryFilter text={"Vehicle"} />
-            <CategoryFilter text={"Life & Entertainment"} />
-            <CategoryFilter text={"Communication, PC"} />
-            <CategoryFilter text={"Financial expenses"} />
-            <CategoryFilter text={"Investments"} />
-            <CategoryFilter text={"Income"} />
-            <CategoryFilter text={"Others"} />
+            {categoryData.map((item, itemIndex) => {
+              return <CategoryFilter key={itemIndex} text={item?.name} />;
+            })}
           </div>
-          <AddCategoryButton />
+          <div className="relative">
+            <AddCategoryButton />
+          </div>
+          {/* <CategoryAddPlus /> */}
         </div>
       </div>
     </div>
