@@ -18,6 +18,7 @@ export const InputL = ({
         onChange={onChange}
         name={name}
         value={value}
+        required
       />
     </div>
   );
