@@ -6,7 +6,7 @@ import { neon } from "@neondatabase/serverless";
 
 dotenv.config();
 
-const PORT = process.env.PORT || 8811;
+const PORT = process.env.PORT || 10000;
 const server = express();
 
 server.use(cors());
