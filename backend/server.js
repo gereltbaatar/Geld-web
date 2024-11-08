@@ -108,7 +108,6 @@ server.post("/login", async (request, response) => {
 server.post("/records", async (request, response) => {
   const { name, amount, transaction_type, description, userId, category_id } =
     request.body;
-  console.log(transaction_type);
 
   try {
     const newRecord =
@@ -141,7 +140,7 @@ server.post("/category", async (request, response) => {
     });
   } catch (error) {
     response.status(500).json({
-      message: "aldaagarlaa",
+      message: "aldaa garlaa",
       error: error,
     });
   }
