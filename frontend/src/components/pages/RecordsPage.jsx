@@ -8,7 +8,7 @@ const RecordsPage = () => {
   const [categoryData, setCategoryData] = useState([]);
   const BACKEND_ENDPOINT = process.env.BACKEND_URL;
 
-  async function fetchDataOne() {
+  const fetchDataOne = async () => {
     try {
       const response = await fetch(`${BACKEND_ENDPOINT}/records`);
       if (!response.ok) {
@@ -21,9 +21,9 @@ const RecordsPage = () => {
     } catch (error) {
       console.error("Error fetching data:", error);
     }
-  }
+  };
 
-  async function fetchDataTwo() {
+  const fetchDataTwo = async () => {
     try {
       const response = await fetch(`${BACKEND_ENDPOINT}/category`);
       if (!response.ok) {
@@ -36,7 +36,7 @@ const RecordsPage = () => {
     } catch (error) {
       console.error("Error fetching data:", error);
     }
-  }
+  };
 
   useEffect(() => {
     fetchDataOne();

@@ -6,6 +6,7 @@ export const InputL = ({
   type,
   id,
   htmlFor,
+  required,
 }) => {
   return (
     <div className="w-full">
@@ -18,7 +19,7 @@ export const InputL = ({
         onChange={onChange}
         name={name}
         value={value}
-        required
+        required={required}
       />
     </div>
   );

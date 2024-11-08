@@ -85,6 +85,7 @@ export const AddCategoryButton = () => {
                     value={formik.values.name}
                     onChange={formik.handleChange}
                     placeholder={"Name"}
+                    required={"required"}
                   />
                 </div>
               </div>
