@@ -75,8 +75,6 @@ export const CategoryAdd = ({
   const defaultIcon = iconsArray?.find((iconOne) => iconOne?.name === icon);
   const defaultIconColor = iconColor;
 
-  console.log(defaultIconColordefaultIconColor, "defaultIcon");
-
   console.log(defaultIconColor, "defaultIconColor");
 
   return (
