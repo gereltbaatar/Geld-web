@@ -5,7 +5,7 @@ import { CategoryAdd, InputL } from "../parts";
 import { Close, PlusIconBlue } from "../svg";
 import { useFormik } from "formik";
 
-export const AddCategoryButton = () => {
+export const AddCategoryButton = (setCategoryData) => {
   ///////////////////////////////////////////////////////////////////////////////
 
   const [iconColor, setIconColor] = useState("");
@@ -32,6 +32,7 @@ export const AddCategoryButton = () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
         },
 
         body: JSON.stringify(requestData),
@@ -43,10 +44,12 @@ export const AddCategoryButton = () => {
           throw new Error("Failed to create category");
         }
         const data = await response.json();
+        setCategoryData((prevCats) => [...prevCats, data]);
         console.log("Response Data:", data);
       } catch (error) {
         setErrorMessage(error);
       }
+      document.getElementById("add_category").close();
     },
   });
 

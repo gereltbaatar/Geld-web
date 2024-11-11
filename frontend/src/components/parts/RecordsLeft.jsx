@@ -3,13 +3,18 @@
 import { AddCategoryButton, AddRecords } from "../buttons";
 import { CategoryAddPlus, CategoryFilter, Search } from "../parts";
 
-export const RecordsLeft = ({ categoryData }) => {
+export const RecordsLeft = ({ setCategoryData, categoryData }) => {
+  console.log(categoryData, "categoryData shuuu 3");
+
   return (
     <div className="max-w-[260px] w-full max-h-[820px] h-full py-6 px-4 border border-base200 bg-[#F9FAFB] rounded-xl ">
       <div className="flex flex-col items-start gap-6">
         <div className="font-roboto font-bold not-italic text-2xl">Records</div>
         <div className="w-full">
-          <AddRecords categoryData={categoryData} />
+          <AddRecords
+            setCategoryData={setCategoryData}
+            categoryData={categoryData}
+          />
         </div>
         <Search />
         <div className="flex flex-col gap-4">
@@ -56,7 +61,7 @@ export const RecordsLeft = ({ categoryData }) => {
             })}
           </div>
           <div className="relative">
-            <AddCategoryButton />
+            <AddCategoryButton setCategoryData={setCategoryData} />
           </div>
           {/* <CategoryAddPlus /> */}
         </div>

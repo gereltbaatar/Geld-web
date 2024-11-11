@@ -5,7 +5,7 @@ import { AddCategory, InputL } from "../parts";
 import { Close, PlusIcon } from "../svg";
 import { useState } from "react";
 
-export const AddRecords = ({ categoryData }) => {
+export const AddRecords = ({ categoryData, setCategoryData }) => {
   const [transactionType, setTransactionType] = useState("EXP");
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -33,6 +33,7 @@ export const AddRecords = ({ categoryData }) => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
         },
 
         body: JSON.stringify(requestData),
@@ -47,6 +48,7 @@ export const AddRecords = ({ categoryData }) => {
       } catch (error) {
         setErrorMessage("Network error");
       }
+      document.getElementById("add_records").close();
     },
   });
 
@@ -54,15 +56,15 @@ export const AddRecords = ({ categoryData }) => {
     <div className="">
       <button
         className="flex w-full items-center justify-center bg-blue gap-1 px-3 py-1 rounded-[20px]"
-        onClick={() => document.getElementById("my_modal_4").showModal()}
+        onClick={() => document.getElementById("add_records").showModal()}
       >
         <PlusIcon />
         <p className="font-roboto font-normal not-italic text-base text-white">
           Add
         </p>
       </button>
-      <dialog id="my_modal_4" className="modal">
-        <div className="modal-box p-0 rounded-lg max-w-[744px]">
+      <dialog id="add_records" className="">
+        <div className="p-0 rounded-lg max-w-[744px]">
           <div className="flex justify-between py-5 px-6 border border-x-0 border-t-0">
             <h3 className="font-roboto font-bold not-italic text-xl text-[#0F172A]">
               Add Record
