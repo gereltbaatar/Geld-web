@@ -4,6 +4,38 @@ import { useState, useEffect } from "react";
 import { Header, Loader, RecordsLeft, RecordsRight } from "../parts";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
+import {
+  HouseOneIcon,
+  HouseTwoIcon,
+  IdentificationBadge,
+  IdentificationCard,
+  Ladder,
+  IntersectSquare,
+  ImageSquare,
+  MagnifyingGlassPlus,
+  Microphone,
+  MicrosoftExcelLogo,
+  Notepad,
+  ListPlus,
+  Leaf,
+  NumberFive,
+  NumberCircleSeven,
+  RoadHorizon,
+  HourglassSimpleMedium,
+  AnchorSimple,
+  BezierCurve,
+  Exclude,
+  Vignette,
+  Baseball,
+  Question,
+  Exam,
+  Watch,
+  GlobeSimple,
+  OrangeSlice,
+  Peace,
+  ToiletPaper,
+  Pencil,
+} from "../categorySvg";
 
 const RecordsPage = () => {
   const [recordData, setRecordData] = useState([]);
@@ -11,6 +43,41 @@ const RecordsPage = () => {
   const BACKEND_ENDPOINT = process.env.BACKEND_URL;
   const router = useRouter();
   const [loading, setLoading] = useState(true);
+
+  ///////////////////////////////////////////////////////////////////////////////
+
+  const iconsArray = [
+    { icon: <HouseOneIcon />, name: "HouseOneIcon" },
+    { icon: <HouseTwoIcon />, name: "HouseTwoIcon" },
+    { icon: <IdentificationBadge />, name: "IdentificationBadge" },
+    { icon: <IdentificationCard />, name: "IdentificationCard" },
+    { icon: <Ladder />, name: "Ladder" },
+    { icon: <IntersectSquare />, name: "IntersectSquare" },
+    { icon: <ImageSquare />, name: "ImageSquare" },
+    { icon: <MagnifyingGlassPlus />, name: "MagnifyingGlassPlus" },
+    { icon: <Microphone />, name: "Microphone" },
+    { icon: <MicrosoftExcelLogo />, name: "MicrosoftExcelLogo" },
+    { icon: <Notepad />, name: "Notepad" },
+    { icon: <ListPlus />, name: "ListPlus" },
+    { icon: <Leaf />, name: "Leaf" },
+    { icon: <NumberFive />, name: "NumberFive" },
+    { icon: <NumberCircleSeven />, name: "NumberCircleSeven" },
+    { icon: <RoadHorizon />, name: "RoadHorizon" },
+    { icon: <HourglassSimpleMedium />, name: "HourglassSimpleMedium" },
+    { icon: <AnchorSimple />, name: "AnchorSimple" },
+    { icon: <BezierCurve />, name: "BezierCurve" },
+    { icon: <Exclude />, name: "Exclude" },
+    { icon: <Vignette />, name: "Vignette" },
+    { icon: <Baseball />, name: "Baseball" },
+    { icon: <Question />, name: "Question" },
+    { icon: <Exam />, name: "Exam" },
+    { icon: <Watch />, name: "Watch" },
+    { icon: <GlobeSimple />, name: "GlobeSimple" },
+    { icon: <OrangeSlice />, name: "OrangeSlice" },
+    { icon: <Peace />, name: "Peace" },
+    { icon: <ToiletPaper />, name: "ToiletPaper" },
+    { icon: <Pencil />, name: "Pencil" },
+  ];
 
   ///////////////////////////////////////////////////////////////////////////////
 
@@ -75,6 +142,7 @@ const RecordsPage = () => {
               <RecordsLeft
                 setCategoryData={setCategoryData}
                 categoryData={categoryData}
+                iconsArray={iconsArray}
               />
               <div className="w-full">
                 <RecordsRight

@@ -5,7 +5,7 @@ import { AddCategory, InputL } from "../parts";
 import { Close, PlusIcon } from "../svg";
 import { useState } from "react";
 
-export const AddRecords = ({ categoryData, setCategoryData }) => {
+export const AddRecords = ({ categoryData, iconsArray }) => {
   const [transactionType, setTransactionType] = useState("EXP");
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -124,7 +124,10 @@ export const AddRecords = ({ categoryData, setCategoryData }) => {
                           Category
                         </p>
                         <div className="relative">
-                          <AddCategory categoryData={categoryData} />
+                          <AddCategory
+                            categoryData={categoryData}
+                            iconsArray={iconsArray}
+                          />
                         </div>
                       </div>
                       <div className="grid grid-cols-2 gap-3">

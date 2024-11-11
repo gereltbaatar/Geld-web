@@ -5,11 +5,12 @@ import { CategoryAdd, InputL } from "../parts";
 import { Close, PlusIconBlue } from "../svg";
 import { useFormik } from "formik";
 
-export const AddCategoryButton = (setCategoryData) => {
+export const AddCategoryButton = (setCategoryData, iconsArray) => {
   ///////////////////////////////////////////////////////////////////////////////
 
   const [iconColor, setIconColor] = useState("");
-  const [icon, setIcon] = useState("");
+  const [icon, setIcon] = useState("HouseOneIcon");
+  const [userIconSee, setUserIconSee] = useState("HouseOneIcon");
   const [errorMessage, setErrorMessage] = useState("");
 
   const BACKEND_ENDPOINT = process.env.BACKEND_URL;
@@ -32,7 +33,6 @@ export const AddCategoryButton = (setCategoryData) => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "*",
         },
 
         body: JSON.stringify(requestData),
@@ -45,7 +45,6 @@ export const AddCategoryButton = (setCategoryData) => {
         }
         const data = await response.json();
         setCategoryData((prevCats) => [...prevCats, data]);
-        console.log("Response Data:", data);
       } catch (error) {
         setErrorMessage(error);
       }
@@ -79,7 +78,14 @@ export const AddCategoryButton = (setCategoryData) => {
           <form onSubmit={formik.handleSubmit}>
             <div className="p-6 flex flex-col gap-8 ">
               <div className="flex  gap-3 relative">
-                <CategoryAdd setIcon={setIcon} setIconColor={setIconColor} />
+                <CategoryAdd
+                  userIconSee={userIconSee}
+                  setUserIconSee={setUserIconSee}
+                  setIcon={setIcon}
+                  setIconColor={setIconColor}
+                  iconColor={iconColor}
+                  icon={icon}
+                />
                 <div className="w-full max-w-[318px]">
                   <InputL
                     id={"name"}

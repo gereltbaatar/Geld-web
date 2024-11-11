@@ -3,7 +3,7 @@
 import { CategoryAddPlus, CategoryCom } from ".";
 import { ArrowDropDown } from "../svg";
 import * as React from "react";
-export const AddCategory = ({ categoryData }) => {
+export const AddCategory = ({ categoryData, iconsArray }) => {
   return (
     <details className="dropdown w-full">
       <summary className="w-full flex items-center justify-between self-stretch px-4 py-2 h-12 border border-base300 rounded-lg bg-base100 m-0">
@@ -24,7 +24,7 @@ export const AddCategory = ({ categoryData }) => {
           {categoryData.map((item, itemIndex) => {
             return (
               <li key={itemIndex}>
-                <CategoryCom item={item} />
+                <CategoryCom item={item} iconsArray={iconsArray} />
               </li>
             );
           })}

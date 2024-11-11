@@ -32,45 +32,59 @@ import {
 } from "../categorySvg";
 import { ArrowDropDown } from "../svg";
 
-const iconsArray = [
-  { icon: <HouseOneIcon />, name: "HouseOneIcon" },
-  { icon: <HouseTwoIcon />, name: "HouseTwoIcon" },
-  { icon: <IdentificationBadge />, name: "IdentificationBadge" },
-  { icon: <IdentificationCard />, name: "IdentificationCard" },
-  { icon: <Ladder />, name: "Ladder" },
-  { icon: <IntersectSquare />, name: "IntersectSquare" },
-  { icon: <ImageSquare />, name: "ImageSquare" },
-  { icon: <MagnifyingGlassPlus />, name: "MagnifyingGlassPlus" },
-  { icon: <Microphone />, name: "Microphone" },
-  { icon: <MicrosoftExcelLogo />, name: "MicrosoftExcelLogo" },
-  { icon: <Notepad />, name: "Notepad" },
-  { icon: <ListPlus />, name: "ListPlus" },
-  { icon: <Leaf />, name: "Leaf" },
-  { icon: <NumberFive />, name: "NumberFive" },
-  { icon: <NumberCircleSeven />, name: "NumberCircleSeven" },
-  { icon: <RoadHorizon />, name: "RoadHorizon" },
-  { icon: <HourglassSimpleMedium />, name: "HourglassSimpleMedium" },
-  { icon: <AnchorSimple />, name: "AnchorSimple" },
-  { icon: <BezierCurve />, name: "BezierCurve" },
-  { icon: <Exclude />, name: "Exclude" },
-  { icon: <Vignette />, name: "Vignette" },
-  { icon: <Baseball />, name: "Baseball" },
-  { icon: <Question />, name: "Question" },
-  { icon: <Exam />, name: "Exam" },
-  { icon: <Watch />, name: "Watch" },
-  { icon: <GlobeSimple />, name: "GlobeSimple" },
-  { icon: <OrangeSlice />, name: "OrangeSlice" },
-  { icon: <Peace />, name: "Peace" },
-  { icon: <ToiletPaper />, name: "ToiletPaper" },
-  { icon: <Pencil />, name: "Pencil" },
-];
+export const CategoryAdd = ({
+  setIcon,
+  setIconColor,
+  icon,
+  iconColor,
+  setUserIconSee,
+  userIconSee,
+}) => {
+  const iconsArray = [
+    { icon: <HouseOneIcon />, name: "HouseOneIcon" },
+    { icon: <HouseTwoIcon />, name: "HouseTwoIcon" },
+    { icon: <IdentificationBadge />, name: "IdentificationBadge" },
+    { icon: <IdentificationCard />, name: "IdentificationCard" },
+    { icon: <Ladder />, name: "Ladder" },
+    { icon: <IntersectSquare />, name: "IntersectSquare" },
+    { icon: <ImageSquare />, name: "ImageSquare" },
+    { icon: <MagnifyingGlassPlus />, name: "MagnifyingGlassPlus" },
+    { icon: <Microphone />, name: "Microphone" },
+    { icon: <MicrosoftExcelLogo />, name: "MicrosoftExcelLogo" },
+    { icon: <Notepad />, name: "Notepad" },
+    { icon: <ListPlus />, name: "ListPlus" },
+    { icon: <Leaf />, name: "Leaf" },
+    { icon: <NumberFive />, name: "NumberFive" },
+    { icon: <NumberCircleSeven />, name: "NumberCircleSeven" },
+    { icon: <RoadHorizon />, name: "RoadHorizon" },
+    { icon: <HourglassSimpleMedium />, name: "HourglassSimpleMedium" },
+    { icon: <AnchorSimple />, name: "AnchorSimple" },
+    { icon: <BezierCurve />, name: "BezierCurve" },
+    { icon: <Exclude />, name: "Exclude" },
+    { icon: <Vignette />, name: "Vignette" },
+    { icon: <Baseball />, name: "Baseball" },
+    { icon: <Question />, name: "Question" },
+    { icon: <Exam />, name: "Exam" },
+    { icon: <Watch />, name: "Watch" },
+    { icon: <GlobeSimple />, name: "GlobeSimple" },
+    { icon: <OrangeSlice />, name: "OrangeSlice" },
+    { icon: <Peace />, name: "Peace" },
+    { icon: <ToiletPaper />, name: "ToiletPaper" },
+    { icon: <Pencil />, name: "Pencil" },
+  ];
+  const defaultIcon = iconsArray?.find((iconOne) => iconOne?.name === icon);
+  const defaultIconColor = iconColor;
 
-export const CategoryAdd = ({ setIcon, setIconColor }) => {
+  console.log(defaultIconColordefaultIconColor, "defaultIcon");
+
+  console.log(defaultIconColor, "defaultIconColor");
+
   return (
     <details className="dropdown">
       <summary className="flex px-4 py-[11px] rounded-lg border border-base300 bg-[#F9FAFB] max-w-[84px] relative">
-        <div className="flex gap-1">
-          <HouseOneIcon />
+        <div className={`flex gap-1`}>
+          {defaultIcon?.icon}
+          <HouseOneIcon color={defaultIconColor} />
           <ArrowDropDown />
         </div>
       </summary>
