@@ -32,7 +32,12 @@ export const Header = () => {
               </div>
               <div className="flex gap-6">
                 <div className="flex items-center">
-                  <button className="flex items-center bg-blue gap-1 px-3 py-1 rounded-[20px]">
+                  <button
+                    className="flex items-center bg-blue gap-1 px-3 py-1 rounded-[20px]"
+                    onClick={() =>
+                      document.getElementById("add_records").showModal()
+                    }
+                  >
                     <PlusIcon />
                     <p className="font-roboto font-normal not-italic text-base text-white">
                       Record

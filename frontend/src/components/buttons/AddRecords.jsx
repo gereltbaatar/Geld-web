@@ -63,8 +63,8 @@ export const AddRecords = ({ categoryData, setCategoryData }) => {
           Add
         </p>
       </button>
-      <dialog id="add_records" className="">
-        <div className="p-0 rounded-lg max-w-[744px]">
+      <dialog id="add_records" className="modal">
+        <div className="p-0 rounded-lg max-w-[744px] bg-white">
           <div className="flex justify-between py-5 px-6 border border-x-0 border-t-0">
             <h3 className="font-roboto font-bold not-italic text-xl text-[#0F172A]">
               Add Record
@@ -123,7 +123,9 @@ export const AddRecords = ({ categoryData, setCategoryData }) => {
                         <p className="not-italic text-base font-normal font-roboto">
                           Category
                         </p>
-                        <AddCategory categoryData={categoryData} />
+                        <div className="relative">
+                          <AddCategory categoryData={categoryData} />
+                        </div>
                       </div>
                       <div className="grid grid-cols-2 gap-3">
                         <div className="flex flex-col gap-1">

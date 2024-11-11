@@ -65,7 +65,7 @@ export const AddCategoryButton = (setCategoryData) => {
         </p>
       </button>
       <dialog id="add_category" className="modal">
-        <div className="modal-box p-0 rounded-lg relative">
+        <div className="bg-white p-0 rounded-lg max-w-[470px] w-full">
           <div className="flex justify-between py-5 px-6 border border-x-0 border-t-0">
             <h3 className="font-roboto font-bold not-italic text-xl text-[#0F172A]">
               Add Category
@@ -78,9 +78,9 @@ export const AddCategoryButton = (setCategoryData) => {
           </div>
           <form onSubmit={formik.handleSubmit}>
             <div className="p-6 flex flex-col gap-8 ">
-              <div className="flex gap-3">
+              <div className="flex  gap-3 relative">
                 <CategoryAdd setIcon={setIcon} setIconColor={setIconColor} />
-                <div className="w-full">
+                <div className="w-full max-w-[318px]">
                   <InputL
                     id={"name"}
                     name={"name"}

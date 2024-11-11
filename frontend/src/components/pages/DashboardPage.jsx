@@ -26,7 +26,7 @@ const HomePage = () => {
     setLoading(false);
     if (!isLoggedIn) {
       toast.warning("Login please!");
-      router.push("/login");
+      router.push("/");
     }
   }, [router]);
 

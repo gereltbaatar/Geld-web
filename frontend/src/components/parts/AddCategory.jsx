@@ -5,14 +5,14 @@ import { ArrowDropDown } from "../svg";
 import * as React from "react";
 export const AddCategory = ({ categoryData }) => {
   return (
-    <details className="dropdown">
+    <details className="dropdown w-full">
       <summary className="w-full flex items-center justify-between self-stretch px-4 py-2 h-12 border border-base300 rounded-lg bg-base100 m-0">
         <p className="text-neutral not-italic text-base font-roboto">
           Find or choose category
         </p>
         <ArrowDropDown />
       </summary>
-      <ul className="menu dropdown-content max-w-80 w-full h-40 p-0 rounded-lg bg-white  overflow-auto scrollbar-hide border border-base300">
+      <ul className="menu dropdown-content max-w-80 w-full  p-0 rounded-lg bg-white overflow-auto scrollbar-hide border border-base300  max-h-[400px] absolute">
         <div className="">
           <li>
             <div className="flex items-center gap-3 px-4 py-2">

@@ -68,7 +68,7 @@ const iconsArray = [
 export const CategoryAdd = ({ setIcon, setIconColor }) => {
   return (
     <details className="dropdown">
-      <summary className="flex px-4 py-[11px] rounded-lg border border-base300 bg-[#F9FAFB]">
+      <summary className="flex px-4 py-[11px] rounded-lg border border-base300 bg-[#F9FAFB] max-w-[84px] relative">
         <div className="flex gap-1">
           <HouseOneIcon />
           <ArrowDropDown />
@@ -76,7 +76,7 @@ export const CategoryAdd = ({ setIcon, setIconColor }) => {
       </summary>
       <ul
         id=" unordered_list"
-        className=" bg-base-100 rounded-box z-[1] w-[320px] p-2 shadows"
+        className=" bg-base-100 rounded-box z-[1] w-[320px] p-2 shadows border absolute"
       >
         <div className="p-6 w-[312px] rounded-lg">
           <div className="flex flex-col gap-6 ">
