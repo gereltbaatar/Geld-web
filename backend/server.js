@@ -38,7 +38,7 @@ server.get("/records", async (_, response) => {
 
 ///////////////////////////////////////////////////////////////////////////////
 
-server.get("/category", async (request, response) => {
+server.get("/category", async (_, response) => {
   try {
     const categoryData = await sql`SELECT * FROM category`;
     response.status(200).json({ success: true, categoryData });
