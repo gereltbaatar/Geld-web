@@ -39,7 +39,7 @@ export const RecordsRight = ({ recordData, categoryData }) => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-6 max-h-[850px] h-full overflow-y-scroll scrollbar-hide">
+        <div className="h-screen flex flex-col gap-6 2xl:max-h-[850px] max-h-[690px] overflow-auto scrollbar-hide">
           <div className="flex flex-col gap-3">
             <p className="font-roboto font-bold not-italic text-base w-32">
               Today
