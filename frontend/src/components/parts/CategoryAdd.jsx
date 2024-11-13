@@ -32,14 +32,7 @@ import {
 } from "../categorySvg";
 import { ArrowDropDown } from "../svg";
 
-export const CategoryAdd = ({
-  setIcon,
-  setIconColor,
-  icon,
-  iconColor,
-  setUserIconSee,
-  userIconSee,
-}) => {
+export const CategoryAdd = ({ setIcon, setIconColor, icon, iconColor }) => {
   const iconsArray = [
     { icon: <HouseOneIcon />, name: "HouseOneIcon" },
     { icon: <HouseTwoIcon />, name: "HouseTwoIcon" },
